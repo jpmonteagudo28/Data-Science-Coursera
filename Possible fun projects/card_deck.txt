@@ -1,0 +1,14 @@
+Hand	Suit1	Suit2	Suit3	Suit4
+ace	Spade	Clubs	Diamond	Heart
+2	Spade	Clubs	Diamond	Heart
+3	Spade	Clubs	Diamond	Heart
+4	Spade	Clubs	Diamond	Heart
+5	Spade	Clubs	Diamond	Heart
+6	Spade	Clubs	Diamond	Heart
+7	Spade	Clubs	Diamond	Heart
+8	Spade	Clubs	Diamond	Heart
+9	Spade	Clubs	Diamond	Heart
+10	Spade	Clubs	Diamond	Heart
+jack	Spade	Clubs	Diamond	Heart
+queen	Spade	Clubs	Diamond	Heart
+king	Spade	Clubs	Diamond	Heart
