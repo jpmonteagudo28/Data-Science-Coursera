@@ -2,10 +2,7 @@
 title: "UCI HAR Dataset"
 author: "JP Monteagudo"
 date: "2023-06-19"
-output: 
-  html_document:
-    theme:
-      bootswatch: lux
+output: html_document
 ---
 
 
