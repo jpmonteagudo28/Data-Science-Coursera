@@ -70,9 +70,9 @@ knitr::kable(snippet, caption = "Snippet showing time_Body_Accelerometer_Jerk_St
 
 | Subject | Activities         | **time_Body_Accelerometer_Jerk_StDev.X** |
 |--------:|:-------------------|-----------------------------------------:|
-|       2 | WALKING            |                               -0.2775305 |
-|       2 | WALKING_UPSTAIRS   |                               -0.2761219 |
-|       2 | WALKING_DOWNSTAIRS |                                0.1472491 |
+|       2 | Walking            |                               -0.2775305 |
+|       2 | Walking_Upstairs   |                               -0.2761219 |
+|       2 | Walking_Downstairs |                                0.1472491 |
 
 : **Snippet showing time_Body_Accelerometer_Jerk_StDev.X**
 
