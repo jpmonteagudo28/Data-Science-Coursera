@@ -7,8 +7,7 @@ users by the thousands.
 
 In this project, data collected by Jorge L. Reyes-Ortiz, Davide Anguita,
 Alessandro Ghio, Luca Oneto (2012) at Università degli Studi di Genova
-was cleaned to demonstrate proficiency in data cleaning techniques. (see
-<https://link.springer.com/chapter/10.1007/978-3-642-35395-6_30>)
+was cleaned to demonstrate proficiency in data cleaning techniques. ([see this link](https://link.springer.com/chapter/10.1007/978-3-642-35395-6_30)
 
 ## What’s in this repository?
 
