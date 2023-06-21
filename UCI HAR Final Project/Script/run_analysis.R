@@ -1,13 +1,13 @@
 ##################################################################
-# A. Get and unzip data. Load packages needed for analysis
+# Get and unzip data. Load packages needed for analysis
 ##################################################################
 
 unzip("getdata_projectfiles_UCI HAR Dataset.zip",exdir = getwd())
-my_packages <- c("dplyr","data.table","Hmisc")
+my_packages <- c("dplyr","data.table")
 lapply(my_packages,require,character.only=TRUE)
 
 ##################################################################
-# B. Read the test and training data & variable labels
+# Read the test and train data & label variables
 ##################################################################
 
 pathto_file <- "./UCI HAR Final Project/UCI HAR Dataset"
@@ -48,7 +48,7 @@ training_activities <- read.table(file.path(pathto_file,"train","y_train.txt"), 
 
 
 ####################################################################
-# Step 1 & 2. Combine data sets & extract mean & SD measurements
+# Combine data sets & extract mean & SD measurements
 ####################################################################
 
 test_data <-cbind(test_subjects,test_activities,test_results)
@@ -72,12 +72,18 @@ humanAR_df <- rbind(test_data,train_data)
 rm(test_activities,test_results, test_subjects,training_activities,training_results,training_subjects)
 
 #####################################################################
-# Step 3. Descriptive activity names
+# Descriptive activity names
 #####################################################################
 
 ## Making humanAR$activities into factor var. with 6 levels
 
 humanAR_df$activities <- factor(humanAR_df$activities, levels = activities[,1], labels = activities[,2])
 
+#####################################################################
+# Create an independently tidy data set with variable avg.
+#####################################################################
 
+humanAR_df <- humanAR_df %>% group_by(subject,activities) %>% summarize_each(mean)
+
+write.table(humanAR_df,"tidy_data.csv", sep = ",", row.names = FALSE, quote = FALSE)
 
