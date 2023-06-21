@@ -1,8 +1,6 @@
 UCI HAR Tidy Data
 ================
 
-# Tidy Data Final Project
-
 An exciting area in data science is wearable computing. Companies like
 Fitbit, Nike, Apple, etc. are developing algorithms that attract new
 users by the thousands.
