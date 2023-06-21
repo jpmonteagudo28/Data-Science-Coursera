@@ -23,7 +23,7 @@ The current repository contains the following files:
 
 2.The data set provided by the authors of the study: The data set contains the test and training files for a group of 30 randomly partitioned volunteers (30% test vs. 70% train group). Each volunteer performed six activities (walking, walking upstairs, walking downstairs, sitting, standing, and laying down) while wearing a smartphone device (Samsung Galaxy S II). The measurements captured by the device were the three dimensional axial acceleration and the three dimensional angular velocity at a constant rate of 50Hz. These measurements were captured every 2.56 seconds (one window of time) for a total of 128 readings per window of time.These fixed-width windows were then transformed into a vector of 561 features by calculating time and frequency variables.  The authors aimed to present a new system of human physical Activity Recognition (AR) using smartphone inertial sensors that captured the state of the user and its environment by tapping into the diverse sensors within the smartphone device. 
 
-3.The tidy data set: A data set containing information for each of the volunteers results on each of the six activities for 50 features. 
+3.The tidy data set: A data set containing information for each of the volunteers' results on each of the six activities for 50 features. 
 
 4.The code book: Indicates all the variable names and summaries that were calculated, along with units, and any other relevant information.    
 
