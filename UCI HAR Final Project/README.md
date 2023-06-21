@@ -34,7 +34,15 @@ state of the user and its environment by tapping into the diverse
 sensors within the smartphone device.
 
 3.The tidy data set: A data set containing information for each of the
-volunteers’ results on each of the six activities for 50 features.
+volunteers’ results on each of the six activities for 50 features. 
+
+    The tidy data set was obtained by following these steps:  
+       1. Downloading, unzipping and loading the data into the R environment.  
+       2. Tabulating, and labeling the test, train, activity and features data in order to form one tidy data set.  
+       3. Joining the tabular data in the test and train files, and then extracting the mean and standard deviation measurements.  
+       4. Converting the activities variables into a factor variable with six levels.  
+       5. Creating one tidy data set showing the average of each variable for each activity and each subject. 
+
 
 4.The code book: Indicates all the variable names and summaries that
 were calculated, along with units, and any other relevant information.
