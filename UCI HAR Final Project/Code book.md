@@ -36,7 +36,7 @@ The features vector included 561 features measuring average, standard deviation,
 
     3.  All variables containing *Accelerometer* are derived from the axial acceleration measurements and divided into a *Body* and *Gravity* components.
 
-        i.  the *Body* component of the axial acceleration measurement refers to the dynamic acceleration or acceleration due to motion *(m/s^2^)*. It is calculated by subtracting the acceleration in each of the three-dimensional planes (X, Y, Z) from the gravity component in that plane.
+        i.  the *Body* component of the axial acceleration measurement refers to the dynamic acceleration or acceleration due to motion *(m/s^2^)*. It is calculated by subtracting the acceleration in each of the three-dimensional planes (X, Y, Z) from the gravity component in that plane.  
         ii. the *Gravity* component refers to the force of gravity in *m/s^2^*, and assuming there's no rotation in the sensor of the smartphone device it should always point in the same direction.
 
     4.  The *Gyroscope* variables denote angular velocity *(rad/s)* in a three-dimensional plane. Angular velocity measures how fast an object rotates relative to its axis.
