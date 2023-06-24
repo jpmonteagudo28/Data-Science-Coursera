@@ -1,8 +1,9 @@
 ##################################################################
 # Get and unzip data. Load packages needed for analysis
 ##################################################################
-
-unzip("getdata_projectfiles_UCI HAR Dataset.zip",exdir = getwd())
+url1 <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+download.file(url1,destfile = "./UCI HAR Dataset.zip")
+unzip("UCI HAR Dataset.zip",exdir = getwd())
 my_packages <- c("dplyr","data.table")
 lapply(my_packages,require,character.only=TRUE)
 
@@ -10,7 +11,7 @@ lapply(my_packages,require,character.only=TRUE)
 # Read the test and train data & label variables
 ##################################################################
 
-pathto_file <- "./UCI HAR Final Project/UCI HAR Dataset"
+pathto_file <- "./UCI HAR Dataset"
 test_subjects <- read.table(file.path(pathto_file,"test","subject_test.txt"), header = FALSE, sep = " ")
 
 ## if you're using Windows' notepad, you will get undelimited X_test.txt and X_train.txt files 
@@ -21,7 +22,7 @@ test_activities <- read.table(file.path(pathto_file,"test","y_test.txt"), header
 
 ## Features data
 
-features <- read.table(file.path(pathto_file,"text_Data","features.txt"), header = FALSE, sep = " ")
+features <- read.table(file.path(pathto_file,"features.txt"), header = FALSE, sep = " ")
 features <-features[,2]
 features <- gsub("[\\(\\)-]","",features)
 features <- gsub("^t","time_",features)
@@ -37,7 +38,7 @@ features <- gsub("anglet","angle_time_",features)
 
 ## Activities
 
-activities <- read.table(file.path(pathto_file,"text_Data","activity_labels.txt"), header = FALSE, sep = " ")
+activities <- read.table(file.path(pathto_file,"activity_labels.txt"), header = FALSE, sep = " ")
 colnames(activities) <- c("ID","Label")
 
 ## Train data
@@ -85,5 +86,8 @@ humanAR_df$activities <- factor(humanAR_df$activities, levels = activities[,1], 
 
 humanAR_df <- humanAR_df %>% group_by(subject,activities) %>% summarize_each(mean)
 
+## Both, .csv and .txt data tables are created. Separator in .txt file = "|" will 
+## have to be converted to na.strings when reading the file.
 write.table(humanAR_df,"tidy_data.csv", sep = ",", row.names = FALSE, quote = FALSE)
 
+write.table(humanAR_df, "tidy_data.txt", sep = "|", row.names = FALSE, quote = FALSE)
