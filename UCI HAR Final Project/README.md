@@ -1,5 +1,7 @@
 UCI HAR Tidy Data
 ================
+![A tidy drawer](file:///C:/Users/jpmonteagudo/Downloads/craiyon_082710_a_tiny_box_fitting_into_a_tidy_tiny_square_.png){width=50%}  
+
 
 An exciting area in data science is wearable computing. Companies like
 Fitbit, Nike, Apple, etc. are developing algorithms that attract new
