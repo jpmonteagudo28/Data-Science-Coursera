@@ -34,23 +34,20 @@ glimpse(feb_housepw_consume)
 rm(housepw_consume)
 
 ###################################################################
-## D. Multiple Plots for House ELectric Power in Feb. 07
+## D. Multiple Plots for House Electric Power in Feb. 07
 ###################################################################
 
 par(mfrow = c(2, 2))
 plot(feb_housepw_consume$Date_Time, feb_housepw_consume$Global_active_power,
   pch = 20, type = "b", lty = 2, lwd = 2, col = "orangered",
-  main = "Global Active Power during Two-Day Period in February 2007",
   xlab = "Days", ylab = "Global Active Power(kilowatts)"
 )
 plot(feb_housepw_consume$Date_Time, feb_housepw_consume$Voltage,
   pch = 20, type = "b", lty = 2, lwd = 2, col = "maroon",
-  main = "Voltage during Two-Day Period in February 2007",
   xlab = "Days", ylab = "Voltage (volt)"
 )
 plot(feb_housepw_consume$Date_Time, feb_housepw_consume$Sub_metering_1,
   pch = 20, type = "b", lty = 1, lwd = 2, col = "seagreen",
-  main = "Energy Sub-metering during Two-Day Period in February 2007",
   xlab = "Days", ylab = "Energy Sub-metering"
 )
 lines(feb_housepw_consume$Date_Time, feb_housepw_consume$Sub_metering_2,
@@ -60,12 +57,11 @@ lines(feb_housepw_consume$Date_Time, feb_housepw_consume$Sub_metering_3,
   pch = 23, type = "b", lty = 1, lwd = 2, col = "orangered1"
 )
 legend("topright", c("Sub-metering 1", "Sub-metering 2", "Sub-metering 3"),
-  lty = 1, lwd = 2.5, col = c("seagreen", "slateblue4", "orangered1")
+  lty = 1, lwd = 1, col = c("seagreen", "slateblue4", "orangered1")
 )
 plot(feb_housepw_consume$Date_Time, feb_housepw_consume$Global_reactive_power,
   pch = 20, type = "b", lty = 2, lwd = 2, col = "navyblue",
-  main = "Global Reactive Power during Two-Day Period in February 2007",
-  xlb = "Days", ylab = "Global Reactive Power (kilowatts)"
+  xlab = "Days", ylab = "Global Reactive Power (kilowatts)"
 )
 dev.copy(png, "Plot4.png", width = 480, height = 480)
 dev.off()
