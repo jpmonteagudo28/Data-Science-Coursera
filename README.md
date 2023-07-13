@@ -1,4 +1,4 @@
-# Data-Science-Coursera
+# Data-Science-Coursera :speech_balloon:
 
 This repository contains the work submitted for the Data Science Specialization - John Hopkins University. The number and type of files are varied, so look at the file names carefully.  
 
