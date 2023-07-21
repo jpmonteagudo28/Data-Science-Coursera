@@ -61,6 +61,73 @@ This folder contains four plots:
 4. `Plot4.png`: contains multiple plots for House Electric Power during two-day period in February 2007.  
 
 
+## The PM2.5 Final Class Assignment  
+
+Fine particulate matter (PM2.5) is an ambient air pollutant for which there is strong evidence that it is harmful to human health. In the United States, the Environmental Protection Agency (EPA) is tasked with setting national ambient air quality standards for fine PM and for tracking the emissions of this pollutant into the atmosphere. Approximatly every 3 years, the EPA releases its database on emissions of PM2.5. This database is known as the National Emissions Inventory (NEI). You can read more information about the NEI at the 
+[EPA National Emissions Inventory web site](http://www.epa.gov/ttn/chief/eiinformation.html)
+.
+
+For each year and for each type of PM source, the NEI records how many tons of PM2.5 were emitted from that source over the course of the entire year. The data that you will use for this assignment are for 1999, 2002, 2005, and 2008.
+
+
+* <b>Dataset</b>: <a
+href="https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2FNEI_data.zip">National Emission Inventory</a> [29Mb]
+
+The zip file contains two files:
+
+PM2.5 Emissions Data (
+summarySCC_PM25.rds
+summarySCC_PM25.rds): This file contains a data frame with all of the PM2.5 emissions data for 1999, 2002, 2005, and 2008. For each year, the table contains number of tons of PM2.5 emitted from a specific type of source for the entire year. Here are the first few rows.
+
+```{r echo = FALSE, eval=TRUE}
+head(NEI,7)
+```
+
+### The variable descriptions
+
+- fips: A five-digit number indicating the U.S county (represented as a string)   
+
+  - the first two digits represent the sate while the last three refer to the specific county.  
+  
+    - fips code starting with "TR" refer to Native American Tribes. You can find more information [here](https://gaftp.epa.gov/air/nei/2008/data_summaries/nei_2008_v3_tribal_tier1.xls)   
+    
+    
+    
+- State: represents the state or tribe in which the PM2.5 emissions were measured. You can find the U.S State fips codes [here](https://transition.fcc.gov/oet/info/maps/census/fips/fips.txt)  
+
+
+- SCC: the name of the source as indicated by a digit string (see source code classification table)  
+
+  - provides a mapping from the SCC digit strings in the Emissions table to the actual name of the PM2.5 source.  
+  
+  - The sources are categorized differently, from more general to more specific. You may choose to explorer any of the categories in the source code. 
+  
+- Pollutant: a string indicating the pollutant  
+
+- Emissions: amount of PM2.5 emitted, in tons 
+
+
+- type: the type of source  
+
+  - point, non-point, on-road,non-road  
+  
+  
+- year: the year of emissions recorded    
+
+
+- Emissions_Factor: represents the level of PM2.5 Emissions from 0 - 1000 , 1001 - 10000, 10001 - 50000, 50001 - 90000 *m^3* tons.
+
+```{r echo = FALSE, eval=TRUE}
+ freq_table <- table(NEI$Emissions_factor,NEI$year)
+ print(freq_table)
+```
+ 
+ 
+
+### Script files
+
+
+
 ### Questions?
 
 Feel free to reach out/connect at jpmonteagudo2014@gmail.com
