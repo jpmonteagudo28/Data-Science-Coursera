@@ -93,36 +93,36 @@ summarySCC_PM25.rds): This file contains a data frame with all of the PM2.5 emis
 
 ### The variable descriptions
 
-- fips: A five-digit number indicating the U.S county (represented as a string)   
+- **fips**: A five-digit number indicating the U.S county (represented as a string)   
 
   - the first two digits represent the state while the last three refer to the specific county.  
   
     - fips code starting with "TR" refer to Native American Tribes. You can find more information [here](https://gaftp.epa.gov/air/nei/2008/data_summaries/nei_2008_v3_tribal_tier1.xls)   
      
     
-- State: represents the state or tribe in which the PM2.5 emissions were measured. You can find the U.S State fips code [here](https://transition.fcc.gov/oet/info/maps/census/fips/fips.txt)  
+- **State**: represents the state or tribe in which the PM2.5 emissions were measured. You can find the U.S State fips code [here](https://transition.fcc.gov/oet/info/maps/census/fips/fips.txt)  
 
 
-- SCC: the name of the source as indicated by a digit string (see source code classification table)  
+- **SCC**: the name of the source as indicated by a digit string (see source code classification table)  
 
   - provides a mapping from the SCC digit strings in the Emissions table to the actual name of the PM2.5 source.  
   
   - The sources are categorized differently, from more general to more specific. You may choose to explore any of the categories in the source code. 
   
-- Pollutant: a string indicating the pollutant  
+- **Pollutant**: a string indicating the pollutant  
 
-- Emissions: the amount of PM2.5 emitted, in tons 
+- **Emissions**: the amount of PM2.5 emitted, in tons 
 
 
-- type: the type of source  
+- **type**: the type of source  
 
   - point, non-point, on-road,non-road  
   
   
-- year: the year of emissions recorded (1999, 2002, 2005, 2008)   
+- **year**: the year of emissions recorded (1999, 2002, 2005, 2008)   
 
 
-- Emissions_Factor: represents the level of PM2.5 Emissions from 0 - 1000, 1001 - 10000, 10001 - 50000, 50001 - 90000 *m^3* tons.
+- **Emissions_Factor**: represents the level of PM2.5 Emissions from 0 - 1000, 1001 - 10000, 10001 - 50000, 50001 - 90000 *m^3* tons.
 
 ```              
                    1999    2002    2005    2008
