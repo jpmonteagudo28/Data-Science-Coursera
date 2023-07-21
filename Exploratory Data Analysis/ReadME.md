@@ -79,9 +79,17 @@ PM2.5 Emissions Data (
 summarySCC_PM25.rds
 summarySCC_PM25.rds): This file contains a data frame with all of the PM2.5 emissions data for 1999, 2002, 2005, and 2008. For each year, the table contains number of tons of PM2.5 emitted from a specific type of source for the entire year. Here are the first few rows.
 
-```{r echo = FALSE, eval=TRUE}
-head(NEI,7)
 ```
+ fips      SCC Pollutant Emissions  type year State Emissions_factor
+4  09001 10100401  PM25-PRI        15 POINT 1999    09        [0,1e+03]
+8  09001 10100404  PM25-PRI       234 POINT 1999    09        [0,1e+03]
+12 09001 10100501  PM25-PRI         0 POINT 1999    09        [0,1e+03]
+16 09001 10200401  PM25-PRI         2 POINT 1999    09        [0,1e+03]
+20 09001 10200504  PM25-PRI         0 POINT 1999    09        [0,1e+03]
+24 09001 10200602  PM25-PRI         1 POINT 1999    09        [0,1e+03]
+28 09001 10200603  PM25-PRI         0 POINT 1999    09        [0,1e+03]
+```
+
 
 ### The variable descriptions
 
@@ -117,9 +125,12 @@ head(NEI,7)
 
 - Emissions_Factor: represents the level of PM2.5 Emissions from 0 - 1000 , 1001 - 10000, 10001 - 50000, 50001 - 90000 *m^3* tons.
 
-```{r echo = FALSE, eval=TRUE}
- freq_table <- table(NEI$Emissions_factor,NEI$year)
- print(freq_table)
+```              
+                   1999    2002    2005    2008
+  [0,1e+03]     1107355 1698139 1713163 1976325
+  (1e+03,1e+04]    1107     527     671     327
+  (1e+04,5e+04]       6       8      15       3
+  (5e+04,9e+04]       1       1       1       0
 ```
  
  
