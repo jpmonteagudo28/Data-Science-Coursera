@@ -61,7 +61,7 @@ This folder contains four plots:
 4. `Plot4.png`: contains multiple plots for House Electric Power during two-day period in February 2007.  
 
 
-## The PM2.5 Final Class Assignment  
+## The PM2.5 Final Class Assignment  :steam_locomotive:
 
 Fine particulate matter (PM2.5) is an ambient air pollutant for which there is strong evidence that it is harmful to human health. In the United States, the Environmental Protection Agency (EPA) is tasked with setting national ambient air quality standards for fine PM and for tracking the emissions of this pollutant into the atmosphere. Approximately every 3 years, the EPA releases its database on emissions of PM2.5. This database is known as the National Emissions Inventory (NEI). You can read more information about the NEI at the 
 [EPA National Emissions Inventory website](http://www.epa.gov/ttn/chief/eiinformation.html)
