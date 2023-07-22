@@ -122,7 +122,7 @@ summarySCC_PM25.rds): This file contains a data frame with all of the PM2.5 emis
 - **year**: the year of emissions recorded (1999, 2002, 2005, 2008)   
 
 
-- **Emissions_Factor**: represents the level of PM2.5 Emissions from 0 - 1000, 1001 - 10000, 10001 - 50000, 50001 - 90000 *m^3^* tons.
+- **Emissions_Factor**: represents the level of PM2.5 Emissions from 0 - 1000, 1001 - 10000, 10001 - 50000, 50001 - 90000 *m<sup>3</sup>* tons.
 
 ```              
                    1999    2002    2005    2008
