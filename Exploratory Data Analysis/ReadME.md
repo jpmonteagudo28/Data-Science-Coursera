@@ -103,7 +103,7 @@ summarySCC_PM25.rds): This file contains a data frame with all of the PM2.5 emis
 - **State**: represents the state or tribe in which the PM2.5 emissions were measured. You can find the U.S State fips code [here](https://transition.fcc.gov/oet/info/maps/census/fips/fips.txt)  
 
 
-- **SCC**: the name of the source as indicated by a digit string (see source code classification table)  
+- **SCC**: the name of the source as indicated by a digit string (see [source code classification table](https://sor.epa.gov/sor_internet/registry/scc/SCC-IntroToSCCs_2021.pdf))  
 
   - provides a mapping from the SCC digit strings in the Emissions table to the actual name of the PM2.5 source.  
   
@@ -136,6 +136,67 @@ summarySCC_PM25.rds): This file contains a data frame with all of the PM2.5 emis
 
 ### Script files
 
+As I mentioned earlier, the `Scripts` folder contains five script files related to the EDA class Project #1 and the final_project. Before you run the scripts, **RUN THE `missing_package` FUNCTION**. If you don't run the `missing_package` function, you will not be able to load the data and transform the datasets.
+
+The Scripts folder also contains six additional scripts dealing with the PM2.5 data. Each script will focus on Exploratory Data Analysis(EDA), and you will end up with datasets that contain no outliers or missing values. 
+
+  - `final_project_Plot1.R` answers the question: ***Have total emissions from PM2.5 decreased in the United States from 1999 to 2008?***
+
+ - `final_project_Plot2.R` answers the question: ***Have total emissions from PM2.5 decreased in the Baltimore City, Maryland (fips == "24510") from 1999 to 2008?***
+
+ - `final_project-Plot3.R` answers the question: ***Which type of emission-generating activity has seen increases in emissions from 1999–2008 in Baltimore, MA?***
+
+- `final_project_Plot4.R` answers the question: ***How have emissions from coal combustion-related sources changed from 1999–2008 across the U.S.?***
+
+- `final_project_Plot5.R` answers the question: ***How have emissions from motor vehicle sources changed from 1999–2008 in Baltimore City?***
+
+- `final_project_Plot6.R` answers the question: ***Which city (Baltimore, MA or LA, CA) has seen greater changes over time in motor vehicle emissions?***
+
+Additionally, each script will provide a frequency table that will serve as a reference to understand the resulting plot. For example: 
+
+```{r}
+Finding Baltimore motor vehicle emissions
+MAmotor_emi <- filter(NEI, type == "ON-ROAD" & fips == "24510")
+range(MAmotor_emi$Emissions) # [1] 4.421016e-07 4.643000e+01
+
+MAmotor_table <- table(MAmotor_emi$Emissions_factor, MAmotor_emi$year)
+print(MAmotor_table)
+
+               1999 2002 2005 2008
+ [0,1e+03]      192  321  324  282
+ (1e+03,1e+04]    0    0    0    0
+ (1e+04,5e+04]    0    0    0    0
+ (5e+04,9e+04]    0    0    0    0
+```
+
+### The Plots folder
+
+The plots folder is the cherry on top. By looking at all the plots in the format `final_project_Plotx.png` you will be able to better understand the data. 
+
+`final_project_Plot1.png`: contains a scatterplot of total PM2.5 emissions in *m<sup>3</sup>* tons in the U.S from 1999 - 2008.
+
+`final_project_Plot2.png`: contains a scatterplot of total PM2.5 emissions in *m<sup>3</sup>* tons in Baltimore, MA from 1999 - 2008
+
+`final_project_Plot3.png`: contains four scatterplots which divide the total PM2.5 emissions in *m<sup>3</sup>* tons into four type of emission-generating activities. 
+
+`final_project_Plot4.png`: contains a bar chart comparing Non-Point and Point sources of PM2.5 **coal** emissions
+
+`final_project_Plot5.png`: contains a scatterplot showing the total PM2.5 emissions in *m<sup>3</sup>* tons produced by motor vehicles in Baltimore, MA. 
+
+`final_project_Plot6.png`: contains two bar charts comparing motor vehicle emission levels in Baltimore, MA, and Los Angeles, CA from 1999 - 2008. 
+
+`final_project_ExtraPlot.png`: contains an **OPTIONAL** plot comparing the total number of housing units being built during 1999 - 2008 and the total PM2.5 emissions in *m<sup>3</sup>* tons from Non-Point sources ( include residential heating, charcoal grilling, asphalt paving, and commercial and consumer solvent use). 
+
+`final_project_ExtraPlot2.png`: contains an **OPTIONAL** plot comparing the total number of miles driven in Maryland from 1999 - 2008 and the total PM2.5 emissions in *m<sup>3</sup>* tons from On-Road sources (motor vehicles). 
+
+
+### The Housing (und_cust) and Maryland Miles of Travel (MA_MOT) datasets
+
+**These datasets are entirely optional and were not required in the final project. I chose to use them simply because I wanted to dig deeper and display my technical skills. You do not have to use it.**
+
+The Housing dataset was obtained from the [U.S Census website](https://www.census.gov/construction/nrc/historical_data/index.html). You can download the dataset [here](https://www.census.gov/construction/nrc/xls/under_cust.xls)
+
+The MA_MOT dataset was obtained from [Maryland's Open Data Portal](https://dev.socrata.com/foundry/opendata.maryland.gov/exua-btti), and you can either connect to the API to fetch the data or download an alternative .csv file. 
 
 
 ### Questions?
